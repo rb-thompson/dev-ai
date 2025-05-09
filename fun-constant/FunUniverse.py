@@ -13,6 +13,7 @@ class FunUniverse:
         self.time_steps: List[float] = []
         self.fun_history: List[float] = []
         self.happiness_index = 0.0
+        self.happiness_history: List[float] = []
 
     def inject_fun(self) -> None:
         """Inject a random amount of fun, apmlified by the FUN_CONSTANT."""
@@ -32,6 +33,7 @@ class FunUniverse:
         self.decay_fun()
         self.time_steps.append(step)
         self.fun_history.append(self.fun_level)
+        self.happiness_history.append(self.happiness_index)
         print(f"Step {step}: Fun Level = {self.fun_level:.2f}, Happiness Index = {self.happiness_index:.2f}")
 
     def run_simulation(self, steps: int) -> None:
@@ -42,13 +44,27 @@ class FunUniverse:
         self.visualize()
 
     def visualize(self) -> None:
-        """Visualize the fun level over time."""
-        plt.plot(self.time_steps, self.fun_history, label='Fun Level', color='purple')
-        plt.title("Fun Universe: The Power of FUN_CONSTANT")
+        """Visualize Fun Level and Happiness Index over time with numerical annotations."""
+        plt.figure(figsize=(12, 6))  # Larger figure for clarity
+        
+        # Plot Fun Level
+        plt.plot(self.time_steps, self.fun_history, label="Fun Level", color="purple", marker="o")
+        # Annotate Fun Level values
+        for i, (x, y) in enumerate(zip(self.time_steps, self.fun_history)):
+            plt.text(x, y + 50, f"{y:.2f}", color="purple", fontsize=8, ha="center")
+
+        # Plot Happiness Index
+        plt.plot(self.time_steps, self.happiness_history, label="Happiness Index", color="orange", marker="s")
+        # Annotate Happiness Index values
+        for i, (x, y) in enumerate(zip(self.time_steps, self.happiness_history)):
+            plt.text(x, y - 50, f"{y:.2f}", color="orange", fontsize=8, ha="center")
+
+        plt.title("Fun Universe: Fun Level and Happiness Index Over Time")
         plt.xlabel("Time Steps")
-        plt.ylabel("Fun Level")
+        plt.ylabel("Value")
         plt.grid(True)
         plt.legend()
+        plt.tight_layout()  # Adjust layout to prevent label clipping
         plt.show()
     
 def main():
