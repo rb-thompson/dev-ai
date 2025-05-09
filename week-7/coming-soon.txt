@@ -1,0 +1,17 @@
+Week 1: Foundations of AI
+Week 2: Advanced Machine Learning Concepts
+    - Unsupervised Learning - Clustering
+Week 3: Neural Networks and Deep Learning Fundamentals
+Week 4: Natural Language Processing Basics
+    - Text-Preprocessing
+    - Bag of Words and TF-IDF
+    - Text Classifiation
+    - Word Embeddings
+Week 5: Advanced NLP
+Week 6: Intro to Generative AI
+Week 7: Large Language Models Fundamentals
+Week 8: Advanced Prompt Engineering
+Week 9: LLM Training and Fine-tuning
+Week 10: Building with LangChain
+Week 11: Retrieval-Augmented Generation (RAG)
+Week 12: Intro to AI Agents
