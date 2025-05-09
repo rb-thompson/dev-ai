@@ -5,3 +5,5 @@ This CODE:You program is designed to transform developers into AI-ready professi
 ## Curriculum Overview
 
 Each week I will share my code and examples from the coursework here. 
+
+![Bootcamp Fun](fun-constant/fun_universe_index.png)
